@@ -1,3 +1,5 @@
+// Code generated; DO NOT EDIT.
+
 package {{ .APIPackage }}
 
 import (
@@ -14,10 +16,10 @@ import (
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 	ginoauth2 "github.com/zalando/gin-oauth2"
-	"github.com/mikkeloscar/gin-swagger/middleware"
-	"github.com/mikkeloscar/gin-swagger/api"
+	"github.com/livermorium/gin-swagger/middleware"
+	"github.com/livermorium/gin-swagger/api"
 	log "github.com/sirupsen/logrus"
-	"github.com/mikkeloscar/gin-swagger/tracing"
+	"github.com/livermorium/gin-swagger/tracing"
 	opentracing "github.com/opentracing/opentracing-go"
 	{{range .DefaultImports}}{{printf "%q" .}}
 	{{end}}
