@@ -7,7 +7,7 @@ import (
 
 	"github.com/alecthomas/kingpin"
 	"github.com/go-openapi/analysis"
-	"github.com/go-swagger/go-swagger/generator"
+	"github.com/livermorium/go-swagger/generator"
 )
 
 //go:generate go-bindata -pkg main -o bindata.go templates
@@ -74,9 +74,9 @@ func run(application, specPath string) error {
 			RemoveUnused: false,
 			Expand:       false,
 		},
-		ExcludeSpec:       false,
-		TemplateDir:       "",
-		WithContext:       false,
+		ExcludeSpec: false,
+		TemplateDir: "",
+		//	WithContext:       false,
 		DumpData:          false,
 		Models:            nil,
 		Operations:        nil,
