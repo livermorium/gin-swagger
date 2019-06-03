@@ -15,6 +15,7 @@ import (
 
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 	ginoauth2 "github.com/zalando/gin-oauth2"
 	"github.com/livermorium/gin-swagger/middleware"
 	"github.com/livermorium/gin-swagger/api"
@@ -95,6 +96,7 @@ func ginizePath(path string) string {
 func initializeRoutes(enableAuth bool, tokenURL string, tracer opentracing.Tracer) *Routes {
 	engine := gin.New()
 	engine.Use(gin.Recovery())
+	engine.Use(cors.Default())
 	routes := &Routes{Engine: engine}
 
 	{{range .Operations}}routes.{{ pascalize .Name }}.RouterGroup = routes.Group("")
